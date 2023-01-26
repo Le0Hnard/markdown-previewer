@@ -1,8 +1,11 @@
-import React from 'react';
+import { useContext } from 'react';
+import { TextContext } from '../contexts/TextContext';
 
 const Previewer = () => {
+  const { text, setText } = useContext(TextContext);
+
   return (
-    <div>Previewer</div>
+    <textarea id="preview" onChange={(e) => setText(e.currentTarget.defaultValue)} defaultValue={text}></textarea>
   )
 }
 

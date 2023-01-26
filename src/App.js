@@ -1,11 +1,14 @@
 import Editor from "./components/Editor";
 import Previewer from "./components/Previewer";
+import { TextContextProvider } from "./contexts/TextContext";
 
 function App() {
   return (
     <>
-      <Editor />
-      <Previewer />
+      <TextContextProvider>
+        <Editor />
+        <Previewer />
+      </TextContextProvider>
     </>
   );
 }
