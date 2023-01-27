@@ -4,8 +4,12 @@ import { TextContext } from '../contexts/TextContext';
 const Editor = () => {
   const { text, setText } = useContext(TextContext);
 
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
+
   return (
-    <textarea id="editor" onChange={(e) => setText(e.currentTarget.defaultValue)} defaultValue={text}></textarea>
+    <textarea id="editor" onChange={handleChange} defaultValue={text}></textarea>
   )
 }
 
