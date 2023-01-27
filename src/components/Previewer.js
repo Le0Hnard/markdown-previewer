@@ -4,7 +4,7 @@ import { marked } from "marked";
 import * as DOMPurify from "dompurify";
 
 const Previewer = () => {
-  const { text, setText } = useContext(TextContext);
+  const { text } = useContext(TextContext);
 
   const createMarkup = () => {
     return  {
