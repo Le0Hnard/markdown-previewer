@@ -1,13 +1,19 @@
 import { useContext } from 'react';
 import { TextContext } from '../contexts/TextContext';
 import { marked } from "marked";
+import * as DOMPurify from "dompurify";
 
 const Previewer = () => {
   const { text, setText } = useContext(TextContext);
 
-  // onChange={(e) => e.target.value = text}
+  const createMarkup = () => {
+    return  {
+      __html: DOMPurify.sanitize(marked.parse(text))
+    }
+  };
+
   return (
-    <textarea id="preview" value={marked.parse(text)} readOnly></textarea>
+    <div id="preview" dangerouslySetInnerHTML={createMarkup()} readOnly />
   )
 }
 
