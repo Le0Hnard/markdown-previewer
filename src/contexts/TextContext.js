@@ -6,8 +6,8 @@ export const TextContextProvider = ({ children }) => {
   const [text, setText] = useState("Some content");
 
   return (
-    <TextContext.Provider value={{text, setText}}>
-      { children }
+    <TextContext.Provider value={{ text, setText }}>
+      {children}
     </TextContext.Provider>
   );
 };
